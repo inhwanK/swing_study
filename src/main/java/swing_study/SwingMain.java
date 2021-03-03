@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import swing_study.component.FrameComponentEx;
+import swing_study.component.LabelEx;
 import swing_study.frame.ContentPaneEx;
 import swing_study.layout.FrameLayout;
 import swing_study.layout.LayoutGuBun;
@@ -18,18 +19,24 @@ import swing_study.layout.LayoutGuBun;
 import java.awt.BorderLayout;
 import javax.swing.BoxLayout;
 import javax.swing.border.TitledBorder;
+import javax.swing.UIManager;
+import java.awt.Color;
 
 public class SwingMain extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 	private JButton btn01;
 	private JButton btn02;
-	private JPanel playout;
+	private JPanel pLayout;
 	private JButton btnFlowLayout;
 	private JButton btnBorderayout;
 	private JButton btnGridLayout;
 	private JButton btnAbsoluteLayout;
 	private JButton btn03;
+	private JPanel pComponent;
+	private JButton btn04;
+	private JButton btn05;
+	private JButton btn06;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -68,37 +75,55 @@ public class SwingMain extends JFrame implements ActionListener {
 		btn02.addActionListener(this);
 		contentPane.add(btn02);
 
-		playout = new JPanel();
-		playout.setBorder(new TitledBorder(null, "\uB808\uC774\uC544\uC6C3", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		playout.setToolTipText("");
-		contentPane.add(playout);
-		playout.setLayout(new GridLayout(0, 1, 0, 5));
+		pLayout = new JPanel();
+		pLayout.setBorder(new TitledBorder(null, "\uB808\uC774\uC544\uC6C3", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		pLayout.setToolTipText("");
+		contentPane.add(pLayout);
+		pLayout.setLayout(new GridLayout(0, 1, 0, 5));
 
 		btnFlowLayout = new JButton("FlowLayout");
 		btnFlowLayout.addActionListener(this);
 		// btnFlowLayout.addActionListener(e -> new FrameLayout(LayoutGuBun.FLOW));
-		playout.add(btnFlowLayout);
+		pLayout.add(btnFlowLayout);
 
 		btnGridLayout = new JButton("GridLayout");
 		btnGridLayout.addActionListener(this);
 
-		playout.add(btnGridLayout);
+		pLayout.add(btnGridLayout);
 
 		btnAbsoluteLayout = new JButton("AbsoluteLayout");
 		btnAbsoluteLayout.addActionListener(this);
 
 		btnBorderayout = new JButton("BorderLayout");
-		playout.add(btnBorderayout);
+		pLayout.add(btnBorderayout);
 		btnBorderayout.addActionListener(this);
 
-		playout.add(btnAbsoluteLayout);
+		pLayout.add(btnAbsoluteLayout);
 
 		btn03 = new JButton("JButton 공통 속성");
 		btn03.addActionListener(this);
 		contentPane.add(btn03);
+		
+		pComponent = new JPanel();
+		pComponent.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "JLabelJbuttonJtoggle", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		contentPane.add(pComponent);
+		pComponent.setLayout(new GridLayout(0, 1, 0, 10));
+		
+		btn04 = new JButton("JLabel");
+		btn04.addActionListener(this);
+		pComponent.add(btn04);
+		
+		btn05 = new JButton("JButton");
+		pComponent.add(btn05);
+		
+		btn06 = new JButton("JToggle");
+		pComponent.add(btn06);
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btn04) {
+			actionPerformedBtn04(e);
+		}
 		if (e.getSource() == btn03) {
 			actionPerformedBtnNewButton(e);
 		}
@@ -154,6 +179,10 @@ public class SwingMain extends JFrame implements ActionListener {
 
 	protected void actionPerformedBtnNewButton(ActionEvent e) {
 		FrameComponentEx frame = new FrameComponentEx();
+		frame.setVisible(true);
+	}
+	protected void actionPerformedBtn04(ActionEvent e) {
+		LabelEx frame = new LabelEx();
 		frame.setVisible(true);
 	}
 }
