@@ -26,32 +26,13 @@ public class JButtonEx extends JFrame implements ActionListener {
 	private JPanel contentPane;
 	private String imgPath = System.getProperty("user.dir") + File.separator + "Images"+File.separator;
 	private JToggleButton tglbtn;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					JButtonEx frame = new JButtonEx();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
+	
 	public JButtonEx() {
 		initialize();
 	}
 	private void initialize() {
 		setTitle("JButton && JToggleButton 예제");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 442, 348);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
