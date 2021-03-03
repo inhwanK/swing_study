@@ -44,9 +44,11 @@ public class SwingMain extends JFrame implements ActionListener {
 	private JButton btn05;
 	private JPanel panel;
 	private JButton button;
-	private JButton btnCheckBox;
-	private JButton btnNewButton_1;
+	private JButton btn06;
+	private JButton btnNewButton;
+	
 
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -60,9 +62,7 @@ public class SwingMain extends JFrame implements ActionListener {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public SwingMain() {
 		initialize();
 	}
@@ -132,22 +132,22 @@ public class SwingMain extends JFrame implements ActionListener {
 		panel = new JPanel();
 		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "JCheckBox & JRadioButton", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		contentPane.add(panel);
-		panel.setLayout(new GridLayout(0, 2, 0, 0));
+		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		
-		btnCheckBox = new JButton("New button");
-		btnCheckBox.addActionListener(this);
-		panel.add(btnCheckBox);
+		btn06 = new JButton("New button");
+		btn06.addActionListener(this);
+		panel.add(btn06);
 		
-		btnNewButton_1 = new JButton("New button");
-		panel.add(btnNewButton_1);
+		btnNewButton = new JButton("New button");
+		panel.add(btnNewButton);
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btn06) {
+			actionPerformedBtn06(e);
+		}
 		if (e.getSource() == btn05) {
 			actionPerformedBtn05(e);
-		}
-		if (e.getSource() == btnCheckBox) {
-			actionPerformedBtnCheckBox(e);
 		}
 		if (e.getSource() == btn04) {
 			actionPerformedBtn04(e);
@@ -213,7 +213,11 @@ public class SwingMain extends JFrame implements ActionListener {
 		LabelEx frame = new LabelEx();
 		frame.setVisible(true);
 	}
-	protected void actionPerformedBtnCheckBox(ActionEvent e) {
+	protected void actionPerformedBtn05(ActionEvent e) {
+		JButtonEx frame = new JButtonEx();
+		frame.setVisible(true);
+	}
+	protected void actionPerformedBtn06(ActionEvent e) {
 		JCheckBoxEx frame = new JCheckBoxEx();
 		frame.setVisible(true);
 		
@@ -221,12 +225,9 @@ public class SwingMain extends JFrame implements ActionListener {
 		list.add(new Fruit("사과", 100));
 		list.add(new Fruit("배", 500));
 		list.add(new Fruit("체리", 1000));
+		list.add(new Fruit("귤", 700));
 		
-		CheckBoxCustomEx frame1 = new CheckBoxCustomEx();
+		CheckBoxCustomEx frame1 = new CheckBoxCustomEx(list);
 		frame1.setVisible(true);
-	}
-	protected void actionPerformedBtn05(ActionEvent e) {
-		JButtonEx frame = new JButtonEx();
-		frame.setVisible(true);
 	}
 }

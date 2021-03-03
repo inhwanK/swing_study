@@ -3,22 +3,34 @@ package swing_study.component;
 public class Fruit {
 	private String name;
 	private int price;
-	public Fruit() {
+
+	public Fruit(String string) {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
 	public Fruit(String name, int price) {
 		super();
 		this.name = name;
 		this.price = price;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -27,6 +39,7 @@ public class Fruit {
 		result = prime * result + price;
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -45,10 +58,10 @@ public class Fruit {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
-		return String.format("Fruit [name=%s, price=%s]", name, price);
+		return String.format("%s, %d", name, price);
 	}
-	
-	
+
 }

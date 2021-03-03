@@ -81,7 +81,7 @@ public class JCheckBoxEx extends JFrame implements ItemListener {
 
 		resStr = String.format("현재  %d 원 입니다.", sum);
 		lblRes.setText(resStr);
-	}0
+	}
 
 	protected void itemStateChangedCheckBox(ItemEvent e) {
 		if (e.getStateChange() == ItemEvent.SELECTED) {
