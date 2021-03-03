@@ -28,6 +28,7 @@ import javax.swing.UIManager;
 import java.awt.Color;
 import javax.swing.JLabel;
 
+@SuppressWarnings("serial")
 public class SwingMain extends JFrame implements ActionListener {
 
 	private JPanel contentPane;

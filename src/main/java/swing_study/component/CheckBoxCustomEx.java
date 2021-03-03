@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.awt.event.ItemEvent;
 import java.awt.GridLayout;
 
+@SuppressWarnings("serial")
 public class CheckBoxCustomEx extends JFrame implements ItemListener {
 
 	private JPanel contentPane;
