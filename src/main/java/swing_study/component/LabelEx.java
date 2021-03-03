@@ -19,13 +19,13 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
 
 public class LabelEx extends JFrame implements MouseListener {
-	private String path = System.getProperty("user.dir") + File.separator + "Images"+File.separator;
+	private String imgPath = System.getProperty("user.dir") + File.separator + "Images"+File.separator;
 	private JPanel contentPane;
 	private JLabel lblSouth;
 	private JLabel lblCenter;
 
 	public LabelEx() {
-		System.out.println(path);
+		System.out.println(imgPath);
 		initialize();
 	}
 
@@ -44,14 +44,14 @@ public class LabelEx extends JFrame implements MouseListener {
 
 		lblCenter = new JLabel("");
 		lblCenter.setBackground(Color.WHITE);
-		lblCenter.setIcon(new ImageIcon(path + "common.jfif"));
+		lblCenter.setIcon(new ImageIcon(imgPath + "common.jfif"));
 		contentPane.add(lblCenter);
 
 		lblSouth = new JLabel("New label");
 		lblSouth.addMouseListener(this);
 		lblSouth.setOpaque(true);
 		lblSouth.setBackground(Color.CYAN);
-		lblSouth.setIcon(new ImageIcon(path + "common (1).jfif"));
+		lblSouth.setIcon(new ImageIcon(imgPath + "common (1).jfif"));
 		lblSouth.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lblSouth, BorderLayout.SOUTH);
 	}
@@ -70,7 +70,7 @@ public class LabelEx extends JFrame implements MouseListener {
 	public void mouseReleased(MouseEvent e) {
 	}
 	protected void mouseClickedLblSouth(MouseEvent e) {
-		lblCenter.setIcon(new ImageIcon(path+"common (1).jfif"));
+		lblCenter.setIcon(new ImageIcon(imgPath+"common (1).jfif"));
 		lblSouth.setText("010-1234-1234");
 		JOptionPane.showMessageDialog(null, "변경 완료");
 	}

@@ -36,7 +36,7 @@ public class SwingMain extends JFrame implements ActionListener {
 	private JPanel pComponent;
 	private JButton btn04;
 	private JButton btn05;
-	private JButton btn06;
+	private JPanel panel;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -61,7 +61,7 @@ public class SwingMain extends JFrame implements ActionListener {
 	private void initialize() {
 		setTitle("스윙스터디");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 672, 423);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -113,11 +113,12 @@ public class SwingMain extends JFrame implements ActionListener {
 		btn04.addActionListener(this);
 		pComponent.add(btn04);
 		
-		btn05 = new JButton("JButton");
+		btn05 = new JButton("JButton & JToggle");
 		pComponent.add(btn05);
 		
-		btn06 = new JButton("JToggle");
-		pComponent.add(btn06);
+		panel = new JPanel();
+		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "JCheckBox & JRadioButton", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		contentPane.add(panel);
 	}
 
 	public void actionPerformed(ActionEvent e) {
