@@ -16,6 +16,7 @@ import swing_study.component.FrameComponentEx;
 import swing_study.component.Fruit;
 import swing_study.component.JButtonEx;
 import swing_study.component.JCheckBoxEx;
+import swing_study.component.JRadioBtnEx;
 import swing_study.component.LabelEx;
 import swing_study.frame.ContentPaneEx;
 import swing_study.layout.FrameLayout;
@@ -46,7 +47,7 @@ public class SwingMain extends JFrame implements ActionListener {
 	private JPanel panel;
 	private JButton button;
 	private JButton btn06;
-	private JButton btnNewButton;
+	private JButton btn07;
 	
 
 	
@@ -135,15 +136,19 @@ public class SwingMain extends JFrame implements ActionListener {
 		contentPane.add(panel);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		
-		btn06 = new JButton("New button");
+		btn06 = new JButton("JCheckBox");
 		btn06.addActionListener(this);
 		panel.add(btn06);
 		
-		btnNewButton = new JButton("New button");
-		panel.add(btnNewButton);
+		btn07 = new JButton("JRadioButton");
+		btn07.addActionListener(this);
+		panel.add(btn07);
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btn07) {
+			actionPerformedBtn07(e);
+		}
 		if (e.getSource() == btn06) {
 			actionPerformedBtn06(e);
 		}
@@ -230,5 +235,9 @@ public class SwingMain extends JFrame implements ActionListener {
 		
 		CheckBoxCustomEx frame1 = new CheckBoxCustomEx(list);
 		frame1.setVisible(true);
+	}
+	protected void actionPerformedBtn07(ActionEvent e) {
+		JRadioBtnEx frame = new JRadioBtnEx();
+		frame.setVisible(true);
 	}
 }
