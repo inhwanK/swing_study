@@ -17,6 +17,7 @@ import swing_study.component.Fruit;
 import swing_study.component.JButtonEx;
 import swing_study.component.JCheckBoxEx;
 import swing_study.component.JRadioBtnEx;
+import swing_study.component.JTextFieldEx;
 import swing_study.component.LabelEx;
 import swing_study.frame.ContentPaneEx;
 import swing_study.layout.FrameLayout;
@@ -28,6 +29,7 @@ import javax.swing.border.TitledBorder;
 import javax.swing.UIManager;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 @SuppressWarnings("serial")
 public class SwingMain extends JFrame implements ActionListener {
@@ -48,6 +50,8 @@ public class SwingMain extends JFrame implements ActionListener {
 	private JButton button;
 	private JButton btn06;
 	private JButton btn07;
+	private JPanel panel_1;
+	private JButton btnNewButton;
 	
 
 	
@@ -143,9 +147,20 @@ public class SwingMain extends JFrame implements ActionListener {
 		btn07 = new JButton("JRadioButton");
 		btn07.addActionListener(this);
 		panel.add(btn07);
+		
+		panel_1 = new JPanel();
+		panel_1.setBorder(new TitledBorder(null, "textfield", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		contentPane.add(panel_1);
+		
+		btnNewButton = new JButton("textfield");
+		btnNewButton.addActionListener(this);
+		panel_1.add(btnNewButton);
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnNewButton) {
+			actionPerformedBtnNewButton(e);
+		}
 		if (e.getSource() == btn07) {
 			actionPerformedBtn07(e);
 		}
@@ -212,7 +227,7 @@ public class SwingMain extends JFrame implements ActionListener {
 	}
 
 	protected void actionPerformedBtnNewButton(ActionEvent e) {
-		FrameComponentEx frame = new FrameComponentEx();
+		JTextFieldEx frame = new JTextFieldEx();
 		frame.setVisible(true);
 	}
 	protected void actionPerformedBtn04(ActionEvent e) {
