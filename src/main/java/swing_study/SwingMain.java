@@ -16,6 +16,8 @@ import swing_study.component.FrameComponentEx;
 import swing_study.component.Fruit;
 import swing_study.component.JButtonEx;
 import swing_study.component.JCheckBoxEx;
+import swing_study.component.JListEx;
+import swing_study.component.JListEx2;
 import swing_study.component.JRadioBtnEx;
 import swing_study.component.JTextFieldEx;
 import swing_study.component.LabelEx;
@@ -52,6 +54,10 @@ public class SwingMain extends JFrame implements ActionListener {
 	private JButton btn07;
 	private JPanel panel_1;
 	private JButton btnNewButton;
+	private JPanel panel_2;
+	private JButton btn09;
+	private JButton btn10;
+	private JButton btn11;
 	
 
 	
@@ -80,7 +86,7 @@ public class SwingMain extends JFrame implements ActionListener {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(0, 3, 10, 10));
+		contentPane.setLayout(new GridLayout(0, 5, 10, 10));
 
 		btn01 = new JButton("Jframe \uC608");
 		btn01.addActionListener(this);
@@ -155,9 +161,31 @@ public class SwingMain extends JFrame implements ActionListener {
 		btnNewButton = new JButton("textfield");
 		btnNewButton.addActionListener(this);
 		panel_1.add(btnNewButton);
+		
+		panel_2 = new JPanel();
+		panel_2.setBorder(new TitledBorder(null, "JList", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		contentPane.add(panel_2);
+		panel_2.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		btn09 = new JButton("JList1");
+		btn09.addActionListener(this);
+		panel_2.add(btn09);
+		
+		btn10 = new JButton("JList2");
+		btn10.addActionListener(this);
+		panel_2.add(btn10);
+		
+		btn11 = new JButton("JList3");
+		panel_2.add(btn11);
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btn10) {
+			actionPerformedBtn10(e);
+		}
+		if (e.getSource() == btn09) {
+			actionPerformedBtn09(e);
+		}
 		if (e.getSource() == btnNewButton) {
 			actionPerformedBtnNewButton(e);
 		}
@@ -253,6 +281,14 @@ public class SwingMain extends JFrame implements ActionListener {
 	}
 	protected void actionPerformedBtn07(ActionEvent e) {
 		JRadioBtnEx frame = new JRadioBtnEx();
+		frame.setVisible(true);
+	}
+	protected void actionPerformedBtn09(ActionEvent e) {
+		JListEx frame = new JListEx();
+		frame.setVisible(true);
+	}
+	protected void actionPerformedBtn10(ActionEvent e) {
+		JListEx2 frame = new JListEx2();
 		frame.setVisible(true);
 	}
 }
