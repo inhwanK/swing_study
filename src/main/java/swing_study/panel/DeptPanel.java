@@ -63,7 +63,7 @@ public class DeptPanel extends JPanel {
 		
 		tfFloor = new JTextField();
 		tfFloor.setColumns(10);
-		add(tfFloor);
+		add(tfFloor); 
 	}
 
 }
