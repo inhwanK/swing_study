@@ -77,8 +77,8 @@ public class Employee {
 		return this.salary;
 	}
 
-	public int getDept() {
-		return dept.getDeptNo();
+	public Department getDept() {
+		return dept;
 	}
 
 	public void setDept(Department dept) {
@@ -88,6 +88,12 @@ public class Employee {
 	@Override
 	public String toString() {
 		return String.format("Employee [%s, %s, %s, %s, %s, %s]", empno, empname, title.getNo(), manager.getEmpno(), salary, dept.getDeptNo());
+	}
+
+	public Employee(int empno, String empname) {
+		super();
+		this.empno = empno;
+		this.empname = empname;
 	}
 
 }

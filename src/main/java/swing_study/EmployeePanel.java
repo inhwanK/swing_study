@@ -1,4 +1,4 @@
-package swing_study.panel;
+package swing_study;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -145,14 +145,13 @@ public class EmployeePanel extends JPanel {
 		pBtnPic.add(btnAddPic);
 	}
 
-	public void setEmployee(Employee employee) {
-		
-	}
-	
-	public Employee getEmployee() {
-		return null;
-	}
-	
+	/*
+	 * public void setEmployee(Employee employee) {
+	 * 
+	 * }
+	 * 
+	 * public Employee getEmployee() { return null; }
+	 */
 	public void clearTf() {
 		
 	}
