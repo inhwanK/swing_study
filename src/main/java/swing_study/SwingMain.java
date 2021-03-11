@@ -33,6 +33,10 @@ import swing_study.component.JTabbedPaneEx;
 import swing_study.component.JTextFieldEx;
 import swing_study.component.LabelEx;
 import swing_study.component.table.JTableEx;
+import swing_study.dlg.JFileChooserEx;
+import swing_study.dlg.JOptionPaneConfirmEx;
+import swing_study.dlg.JOptionPaneInputEx;
+import swing_study.dlg.JOptionPaneMessageEx;
 import swing_study.frame.ContentPaneEx;
 import swing_study.layout.FrameLayout;
 import swing_study.layout.LayoutGuBun;
@@ -110,7 +114,7 @@ public class SwingMain extends JFrame implements ActionListener {
 	private void initialize() {
 		setTitle("스윙스터디");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 672, 423);
+		setBounds(100, 100, 1150, 724);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -328,6 +332,12 @@ public class SwingMain extends JFrame implements ActionListener {
 		btn21.addActionListener(this);
 		panel_4.add(btn21);
 		
+		btn24 = new JButton("New button");
+		panel_4.add(btn24);
+		
+		btn25 = new JButton("New button");
+		panel_4.add(btn25);
+		
 		panel_5 = new JPanel();
 		contentPane.add(panel_5);
 		panel_5.setLayout(new GridLayout(0, 1, 0, 0));
@@ -339,6 +349,31 @@ public class SwingMain extends JFrame implements ActionListener {
 		btn23 = new JButton("New button");
 		btn23.addActionListener(this);
 		panel_5.add(btn23);
+		
+		panel_6 = new JPanel();
+		panel_6.setBorder(new TitledBorder(null, "JOptionPane", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		contentPane.add(panel_6);
+		panel_6.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		btn26 = new JButton("InputDialog");
+		btn26.addActionListener(this);
+		panel_6.add(btn26);
+		
+		btn27 = new JButton("ConfirmDialog");
+		btn27.addActionListener(this);
+		panel_6.add(btn27);
+		
+		btn28 = new JButton("MessageDialog");
+		btn28.addActionListener(this);
+		panel_6.add(btn28);
+		
+		panel_7 = new JPanel();
+		panel_7.setBorder(new TitledBorder(null, "JFileChooser", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		contentPane.add(panel_7);
+		
+		btn29 = new JButton("New button");
+		btn29.addActionListener(this);
+		panel_7.add(btn29);
 	}
 
 	class MyactionListener implements ActionListener{
@@ -372,6 +407,14 @@ public class SwingMain extends JFrame implements ActionListener {
 	private JPanel panel_5;
 	private JButton btn22;
 	private JButton btn23;
+	private JPanel panel_6;
+	private JButton btn26;
+	private JButton btn27;
+	private JButton btn28;
+	private JPanel panel_7;
+	private JButton btn29;
+	private JButton btn24;
+	private JButton btn25;
 
 	
 	 
@@ -383,6 +426,18 @@ public class SwingMain extends JFrame implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btn29) {
+			actionPerformedBtn29(e);
+		}
+		if (e.getSource() == btn28) {
+			actionPerformedBtn28(e);
+		}
+		if (e.getSource() == btn27) {
+			actionPerformedBtn27(e);
+		}
+		if (e.getSource() == btn26) {
+			actionPerformedBtn26(e);
+		}
 		if (e.getSource() == btn23) {
 			actionPerformedBtn23(e);
 		}
@@ -561,6 +616,22 @@ public class SwingMain extends JFrame implements ActionListener {
 	}
 	protected void actionPerformedBtn23(ActionEvent e) {
 		JPopupMenuEx frame = new JPopupMenuEx();
+		frame.setVisible(true);
+	}
+	protected void actionPerformedBtn26(ActionEvent e) {
+		JOptionPaneInputEx frame = new JOptionPaneInputEx();
+		frame.setVisible(true);
+	}
+	protected void actionPerformedBtn27(ActionEvent e) {
+		JOptionPaneConfirmEx frame = new JOptionPaneConfirmEx();
+		frame.setVisible(true);
+	}
+	protected void actionPerformedBtn28(ActionEvent e) {
+		JOptionPaneMessageEx frame = new JOptionPaneMessageEx();
+		frame.setVisible(true);
+	}
+	protected void actionPerformedBtn29(ActionEvent e) {
+		JFileChooserEx frame = new JFileChooserEx();
 		frame.setVisible(true);
 	}
 }
