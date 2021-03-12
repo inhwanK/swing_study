@@ -13,6 +13,7 @@ import javax.swing.border.EmptyBorder;
 import swing_study.panel.Department;
 import swing_study.panel.DeptPanel;
 
+@SuppressWarnings("serial")
 public class JPanelEx extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
@@ -63,16 +64,17 @@ public class JPanelEx extends JFrame implements ActionListener {
 			btnSetDeptActionPerformed(e);
 		}
 	}
-
-	protected void btnGetDeptActionPerformed(ActionEvent e) {
-		Department dept =pDept.getDepartment();
-		JOptionPane.showMessageDialog(null, dept);
-	}
-
 	protected void btnSetDeptActionPerformed(ActionEvent e) {
 		Department dept = new Department(1, "기획", 9);
 		pDept.setDepartment(dept);
 	}
+	
+	protected void btnGetDeptActionPerformed(ActionEvent e) {
+		Department dept = pDept.getDepartment();
+		JOptionPane.showMessageDialog(null, dept);
+	}
+
+	
 
 	protected void btnClearActionPerformed(ActionEvent e) {
 		pDept.ClearTf();

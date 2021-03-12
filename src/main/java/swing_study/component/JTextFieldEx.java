@@ -12,6 +12,7 @@ import javax.swing.text.TabableView;
 import javax.swing.JTextField;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.JPasswordField;
 import java.awt.Color;
@@ -47,9 +48,6 @@ public class JTextFieldEx extends JFrame implements ActionListener {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
-
-		JPanel pWest = new JPanel();
-		contentPane.add(pWest, BorderLayout.WEST);
 
 		JPanel pCenter = new JPanel();
 		contentPane.add(pCenter, BorderLayout.CENTER);
@@ -148,9 +146,11 @@ public class JTextFieldEx extends JFrame implements ActionListener {
 				pfPass2.setText("");
 				pfPass1.requestFocus();
 				pfPass1.selectAll();
+				JOptionPane.showMessageDialog(null, "패스워드를 확인하세요");
 				// 패스워드를 확인하세요 메세지 출력
 			}
 		} else {
+			JOptionPane.showMessageDialog(null, "아이디를 입력하세요.");
 			// 아이디 입력하세요 메세지 출력
 		}
 	}
@@ -172,10 +172,10 @@ public class JTextFieldEx extends JFrame implements ActionListener {
 //				ta.
 				tfName.setText("");
 			} else {
-				// 패스워드를 확인하세요 메세지 출력
+				JOptionPane.showMessageDialog(null, "패스워드를 확인하세요");
 			}
 		} else {
-			// 아이디 입력하세요 메세지 출력
+			JOptionPane.showMessageDialog(null, "아이디를 입력하세요.");
 		}
 	}
 

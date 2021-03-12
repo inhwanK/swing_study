@@ -56,7 +56,7 @@ public class Department {
 
 	@Override
 	public String toString() {
-		return String.format("%s(%d)",  deptName, deptNo);
+		return String.format("%s(%d) %d층",  deptName, deptNo, floor);
 	}
 
 }
